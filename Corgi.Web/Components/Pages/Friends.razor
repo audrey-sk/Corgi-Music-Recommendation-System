@@ -1,0 +1,37 @@
+@page "/friends"
+@rendermode InteractiveServer
+@inject ISongShareService ShareService
+
+<PageTitle>Corgi - Friends</PageTitle>
+
+<h1>From your friends</h1>
+
+@if (_shares is null)
+{
+    <p>Loading...</p>
+}
+else if (_shares.Count == 0)
+{
+    <p>No songs sent your way yet.</p>
+}
+else
+{
+    <ul class="share-list">
+        @foreach (var share in _shares)
+        {
+            <li>@share.FromUserId sent you a song - @share.SentAtUtc.LocalDateTime</li>
+        }
+    </ul>
+}
+
+@code {
+    private IReadOnlyList<SongShare>? _shares;
+
+    // Same placeholder user id as Home.razor until auth exists.
+    private const string UserId = "demo-user";
+
+    protected override async Task OnInitializedAsync()
+    {
+        _shares = await ShareService.GetInboxAsync(UserId);
+    }
+}

@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <UserSecretsId>corgi-web-dev-secrets</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Corgi.Core\Corgi.Core.csproj" />
+    <ProjectReference Include="..\Corgi.Infrastructure\Corgi.Infrastructure.csproj" />
+    <ProjectReference Include="..\Corgi.Data\Corgi.Data.csproj" />
+  </ItemGroup>
+
+</Project>

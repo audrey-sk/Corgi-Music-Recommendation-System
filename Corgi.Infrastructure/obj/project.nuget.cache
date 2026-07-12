@@ -1,0 +1,36 @@
+{
+  "version": 2,
+  "dgSpecHash": "Vl5CdBszdc8=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\asafikhani\\source\\repos\\Corgi-Music-Recommendation-System\\Corgi.Infrastructure\\Corgi.Infrastructure.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\asafikhani\\.nuget\\packages\\microsoft.extensions.configuration\\10.0.0\\microsoft.extensions.configuration.10.0.0.nupkg.sha512",
+    "C:\\Users\\asafikhani\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\10.0.0\\microsoft.extensions.configuration.abstractions.10.0.0.nupkg.sha512",
+    "C:\\Users\\asafikhani\\.nuget\\packages\\microsoft.extensions.configuration.binder\\10.0.0\\microsoft.extensions.configuration.binder.10.0.0.nupkg.sha512",
+    "C:\\Users\\asafikhani\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\10.0.0\\microsoft.extensions.dependencyinjection.10.0.0.nupkg.sha512",
+    "C:\\Users\\asafikhani\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\10.0.0\\microsoft.extensions.dependencyinjection.abstractions.10.0.0.nupkg.sha512",
+    "C:\\Users\\asafikhani\\.nuget\\packages\\microsoft.extensions.diagnostics\\10.0.0\\microsoft.extensions.diagnostics.10.0.0.nupkg.sha512",
+    "C:\\Users\\asafikhani\\.nuget\\packages\\microsoft.extensions.diagnostics.abstractions\\10.0.0\\microsoft.extensions.diagnostics.abstractions.10.0.0.nupkg.sha512",
+    "C:\\Users\\asafikhani\\.nuget\\packages\\microsoft.extensions.http\\10.0.0\\microsoft.extensions.http.10.0.0.nupkg.sha512",
+    "C:\\Users\\asafikhani\\.nuget\\packages\\microsoft.extensions.logging\\10.0.0\\microsoft.extensions.logging.10.0.0.nupkg.sha512",
+    "C:\\Users\\asafikhani\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\10.0.0\\microsoft.extensions.logging.abstractions.10.0.0.nupkg.sha512",
+    "C:\\Users\\asafikhani\\.nuget\\packages\\microsoft.extensions.options\\10.0.0\\microsoft.extensions.options.10.0.0.nupkg.sha512",
+    "C:\\Users\\asafikhani\\.nuget\\packages\\microsoft.extensions.options.configurationextensions\\10.0.0\\microsoft.extensions.options.configurationextensions.10.0.0.nupkg.sha512",
+    "C:\\Users\\asafikhani\\.nuget\\packages\\microsoft.extensions.primitives\\10.0.0\\microsoft.extensions.primitives.10.0.0.nupkg.sha512",
+    "C:\\Users\\asafikhani\\.nuget\\packages\\system.net.http.json\\10.0.0\\system.net.http.json.10.0.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1510",
+      "level": "Warning",
+      "message": "PackageReference System.Net.Http.Json will not be pruned. Consider removing this package from your dependencies, as it is likely unnecessary.",
+      "projectPath": "C:\\Users\\asafikhani\\source\\repos\\Corgi-Music-Recommendation-System\\Corgi.Infrastructure\\Corgi.Infrastructure.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\asafikhani\\source\\repos\\Corgi-Music-Recommendation-System\\Corgi.Infrastructure\\Corgi.Infrastructure.csproj",
+      "libraryId": "System.Net.Http.Json",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    }
+  ]
+}

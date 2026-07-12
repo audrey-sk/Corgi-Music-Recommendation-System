@@ -1,0 +1,63 @@
+@page "/"
+@rendermode InteractiveServer
+@inject IWeatherProvider WeatherProvider
+@inject ISeasonProvider SeasonProvider
+@inject IHolidayProvider HolidayProvider
+@inject ICalendarProvider CalendarProvider
+@inject IMoodInferenceService MoodService
+@inject ISongRecommendationService SongService
+
+<PageTitle>Corgi</PageTitle>
+
+<h1>Today's pick</h1>
+
+@if (_error is not null)
+{
+    <p class="error">Couldn't put together a recommendation: @_error</p>
+}
+else if (_song is null)
+{
+    <p>Figuring out what fits the moment...</p>
+}
+else
+{
+    <div class="song-card">
+        <h2>@_song.Title</h2>
+        <p class="artist">@_song.Artist</p>
+        <p class="mood">@string.Join(" · ", _mood!.MoodTags)</p>
+        <p class="rationale">@_mood.Rationale</p>
+    </div>
+}
+
+@code {
+    private Song? _song;
+    private MoodResult? _mood;
+    private string? _error;
+
+    // NOTE: hardcoded for now - replace with the signed-in user's saved
+    // location/country once there's a profile + auth in place.
+    private const double Latitude = 49.28;
+    private const double Longitude = -123.12;
+    private const string CountryCode = "CA";
+    private const string UserId = "demo-user";
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            var weather = await WeatherProvider.GetCurrentAsync(Latitude, Longitude);
+            var season = SeasonProvider.GetCurrentSeason(Latitude);
+            var holiday = await HolidayProvider.GetTodayHolidayAsync(CountryCode);
+            var calendar = await CalendarProvider.GetTodaySummaryAsync(UserId);
+
+            var context = new MoodContext(weather, season, holiday, calendar, DateTimeOffset.Now);
+
+            _mood = await MoodService.InferMoodAsync(context);
+            _song = await SongService.RecommendAsync(_mood);
+        }
+        catch (Exception ex)
+        {
+            _error = ex.Message;
+        }
+    }
+}
